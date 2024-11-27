@@ -1,0 +1,49 @@
+---
+name: Release CV
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Just
+        uses: extractions/setup-just@v2
+
+      - name: Setup Golang
+        uses: actions/setup-go@v5
+        with:
+          version: 1.23
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+        with:
+          cache-dependency-path: requirements.typ
+
+      - name: Build resumes
+        shell: bash
+        run: |
+          just build
+          # compiles into "build" directory
+          just generate
+
+      - name: Create tag
+        shell: bash
+        run: |
+          tag=$(date +'%Y-%m-%d_%H-%M')
+          git tag -a "$tag" -m "Update $tag"
+          git push --tags
+          echo "::set-output name=date::$tag"
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.date.outputs.date }}
+          files: build/*
