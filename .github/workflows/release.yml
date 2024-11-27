@@ -20,7 +20,7 @@ jobs:
       - name: Setup Golang
         uses: actions/setup-go@v5
         with:
-          version: 1.23
+          go-version: 1.23
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
@@ -35,6 +35,7 @@ jobs:
           just generate
 
       - name: Create tag
+        id: tag
         shell: bash
         run: |
           git config user.name "${{ github.actor }}"
@@ -42,10 +43,10 @@ jobs:
           tag=$(date +'%Y-%m-%d_%H-%M')
           git tag -a "$tag" -m "Update $tag"
           git push --tags
-          echo "::set-output name=date::$tag"
+          echo "tag=$tag" >> $GITHUB_OUTPUT
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.tag.outputs.tag }}
           files: build/*
