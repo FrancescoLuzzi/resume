@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
-          tag=$(date +'%Y-%m-%d_%H-%M')
+          tag=$(date +'%Y-%m-%d_%s')
           git tag -a "$tag" -m "Update $tag"
           git push --tags
           echo "tag=$tag" >> $GITHUB_OUTPUT
