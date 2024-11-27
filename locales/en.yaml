@@ -1,0 +1,83 @@
+---
+- title: Experience
+  type: entry
+  entries:
+    - title: AlmaAutomotive
+      location: Bologna IT
+      date: January 2022 - February 2023
+      description: Embedded
+      infos:
+        - Backend development in Python for custom embedded boards.
+          Custom OS compilation based on Yocto.
+          Interaction with various cloud services, a frontend, a microcontroller, and several external peripherals (payment systems, NFC, modems, dispensers, etc.).
+          Used Gitlab for versioning and CI/CD.
+          Managed packaging and OTA updates.
+        - Developed a Python project for CAN-based monitoring of various peripherals. The collected data was sent to a self-hosted ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
+    - title: CentroSoftware
+      location: Bologna IT
+      date: February 2023 - Present
+      description: DevOps/Tooling
+      infos:
+        - Product installer and corresponding CI/CD pipeline in Jenkins.
+        - Project and Delphi profiles management tool developed in Go and React/TS (available as both CLI and GUI), tested and released using GitHub Actions.
+        - Configuration and deployment of self-hosted GitHub runners on Windows and Linux using Docker.
+        - GitHub Actions written in Powershell, Bash, and TypeScript to simplify complex or repetitive logic.
+        - Custom SonarQube plugin written in Java.
+        - Tool for creating and maintaining development environments written in Python (available as both CLI and GUI).
+- title: Education
+  type: entry
+  entries:
+    - title: Bachelor's Degree
+      date: September 2018 - December 2021
+      location: Bologna IT
+      description: Bachelor's degree in Computer Engineering, graduated with a grade of 100/110.
+      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
+- title: Projects
+  type: entry
+  entries:
+    - title: Bachelor's Thesis
+      date: October 2021 - December 2021
+      description: Computer Vision - Python
+      link: https://github.com/FrancescoLuzzi/Tesi
+      infos:
+        - Detection of human poses using the OpenPose network.
+        - Face position estimation and blurring for privacy purposes.
+    - title: Expense Management - Hosted
+      date: May 2021 - August 2021
+      description: WebApp React, Node, Nginx & MariaDB
+      link: https://github.com/FrancescoLuzzi/ReactClient
+      infos:
+        - Since it was for personal use, SSL/TLS or authentication was not configured.
+          The app is not publicly exposed but accessible via a WireGuard VPN.
+        - Cronjob for database backup to a NAS mounted as NFS.
+        - The entire stack was installed on a Raspberry Pi 3B+.
+    - title: Expense Management - Desktop
+      date: May 2018 - July 2018
+      description: Desktop App - Java
+      link: https://github.com/FrancescoLuzzi/scontrini_desktop
+      infos:
+        - Desktop app written in Java11 and JavaFX11 for expense management.
+        - A Python script was implemented for migration to the WebApp.
+    - title: Cinemine - University Project
+      date: April 2021 - July 2021
+      description: WebApp - HTML - CSS - Vanilla JS
+      link: https://github.com/FrancescoLuzzi/Cinemine
+      infos:
+        - Prototype website for managing, selling, and renting movies.
+        - Server and database simulated using `localStorage`.
+- title: Skills
+  type: skill
+  skills:
+    - name: Programming
+      values:
+        - python!
+        - go
+        - rust
+        - javascript/typescript
+        - lua
+        - c
+        - java
+    - name: Languages
+      values:
+        - italian!
+        - english!

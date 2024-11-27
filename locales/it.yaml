@@ -1,0 +1,83 @@
+---
+- title: Esperienza
+  type: entry
+  entries:
+    - title: AlmaAutomotive
+      location: Bologna IT
+      date: Gennaio 2022 - Febbraio 2023
+      description: Embedded
+      infos:
+        - Sviluppo backend in Python per schede embedded custom.
+          Compilazione OS personalizzato basato su Yocto.
+          Interazione con diversi servizi cloud, un frontend, un microcontrollore e diverse periferiche esterne (sistemi di pagamento, nfc, modem, erogatori, ecc.).
+          Utilizzo di Gitlab per versioning e CI/CD
+          Gestione del packaging ed aggiornamento OTA
+        - Sviluppo di un progetto Python per il monitoring via CAN di diverse periferiche, i dati raccolti venivano poi spediti ad un'istanza ThingsBoard self-hosted che si occupava della visualizzazione dei dati, dell'allerting e della configurazione remota real-time delle schede.
+    - title: CentroSoftware
+      location: Bologna IT
+      date: Febbraio 2023 - presente
+      description: DevOps/Tooling
+      infos:
+        - installer del prodotto e relativa pipeline CI/CD Jenkins
+        - tool per la gestione dei progetti e dei profili Delphi realizzato in Go e React/TS (sia formato CLI che GUI), testato e rilasciato utilizzando le GitHub Actions
+        - configurazione e deployment di GitHub self-hosted runners Windows e Linux basati su Docker
+        - GitHub Action scritte i Powershell, Bash e Typescript per semplificare logiche complesse e/o ripetitive
+        - plugin custom SonarQube scritto in Java
+        - tool per la creazione e manutenzione degli ambienti di sviluppo scritto in python (sia formato CLI che GUI)
+- title: Istruzione
+  type: entry
+  entries:
+    - title: Laurea Triennale
+      date: Settembre 2018 - Dicembre 2021
+      location: Bologna IT
+      description: Laurea in ingegneria informatica conseguita con voto 100/110
+      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
+- title: Progetti
+  type: entry
+  entries:
+    - title: Tesi Triennale
+      date: Ottobre 2021 - Dicembre 2021
+      description: Computer Vision - Python
+      link: https://github.com/FrancescoLuzzi/Tesi
+      infos:
+        - Rilevazione delle pose delle persone utilizzando la rete OpenPose
+        - Stima della posizione ed oscuramento dei volti per privacy
+    - title: Gestione Spese - Hosted
+      date: Maggio 2021 - Agosto 2021
+      description: WebApp React, Node, Nginx & MariaDB
+      link: https://github.com/FrancescoLuzzi/ReactClient
+      infos:
+        - Essendo per uso personale non sono stati configurati SSL/TLS o auth,
+          l'app non è esposta pubblicamente ma è accessibile tramite una VPN wireguard
+        - Cronjob per il backup del database su NAS montato come NFS
+        - Tutto lo stack è stato installato su un raspberry 3b+
+    - title: Gestione Spese - Desktop
+      date: Maggio 2018 - Luglio 2018
+      description: Desktop app - Java
+      link: https://github.com/FrancescoLuzzi/scontrini_desktop
+      infos:
+        - App Desktop scritta in Java11 e JavaFX11 per la gestione delle spese
+        - Implementato uno script python per la migrazione alla WebApp
+    - title: Cinemine - Progetto Universitario
+      date: Aprile 2021 - Luglio 2021
+      description: WebApp - Html - CSS - Valinna JS
+      link: https://github.com/FrancescoLuzzi/Cinemine
+      infos:
+        - Prototipo di un sito web per la gestione, vendita e noleggio di film
+        - Server e DB simulati con `localStorage`
+- title: Skills
+  type: skill
+  skills:
+    - name: Programmazione
+      values:
+        - python!
+        - go
+        - rust
+        - javascript/typescript
+        - lua
+        - c
+        - java
+    - name: Lingue
+      values:
+        - italiano!
+        - inglese!

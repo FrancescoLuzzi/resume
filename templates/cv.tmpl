@@ -1,0 +1,58 @@
+#import "@preview/modern-cv:0.7.0": *
+
+#show: resume.with(
+  author: (
+    firstname: "{{.Firstname}}",
+    lastname: "{{.Lastname}}",
+    email: "{{.Email}}",
+    phone: "{{.Phone}}",
+    github: "{{.Github}}",
+    birth: "{{.Birth}}",
+    linkedin: "{{.Linkedin}}",
+    address: "{{.Address}}",
+    positions: ({{ joinQuoted .Positions "," }}),
+  ),
+  font: ("Source Sans 3"),
+  language: "{{.Language}}",
+  colored-headers: true,
+  show-footer: false,
+)
+
+{{define "entry"}}
+= {{.Title}}
+
+{{range .Entries}}
+
+#resume-entry(
+  title: "{{.Title}}",
+  {{if .Location }}
+  location: "{{.Location}}",
+  {{end}}
+  date: "{{.Date}}",
+  description: "{{.Description}}",
+  {{if .Link }}
+  title-link: "{{.Link}}",
+  {{end}}
+)
+
+#resume-item[
+  {{range .Infos}}
+  {{println "-" .}}
+  {{end}}
+]
+{{end}}
+
+{{end}}
+
+
+{{define "skill"}}
+= {{.Title}}
+
+{{range .Skills}}
+#resume-skill-item(
+  "{{.Name}}",
+  ({{joinSkills .Values}}),
+)
+{{end}}
+
+{{end}}
