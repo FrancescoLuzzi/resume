@@ -6,24 +6,25 @@
       location: Bologna IT
       date: January 2022 - February 2023
       description: Embedded
+      link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
       infos:
-        - Backend development in Python for custom embedded boards.
-          Custom OS compilation based on Yocto.
-          Interaction with various cloud services, a frontend, a microcontroller, and several external peripherals (payment systems, NFC, modems, dispensers, etc.).
-          Used Gitlab for versioning and CI/CD.
-          Managed packaging and OTA updates.
-        - Developed a Python project for CAN-based monitoring of various peripherals. The collected data was sent to a self-hosted ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
+        - Python project developed for custom embedded boards.
+          Custom OS compiled using Yocto.
+          Interaction with various cloud services, frontend, microcontrollers and several external peripherals (payment systems, NFC, modems, dispensers, etc.).
+          Gitlab for versioning and CI/CD.
+          Custom project packaging and OTA updates.
+        - Python project for CAN-based monitoring of various peripherals. The data was then collected in a self-hosted ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
     - title: CentroSoftware
       location: Bologna IT
       date: February 2023 - Present
       description: DevOps/Tooling
       infos:
-        - Product installer and corresponding CI/CD pipeline in Jenkins.
-        - Project and Delphi profiles management tool developed in Go and React/TS (available as both CLI and GUI), tested and released using GitHub Actions.
-        - Configuration and deployment of self-hosted GitHub runners on Windows and Linux using Docker.
-        - GitHub Actions written in Powershell, Bash, and TypeScript to simplify complex or repetitive logic.
+        - Installer of the product and relative Jenkins CI/CD pipeline.
+        - Project and Delphi's profiles management tool developed in Go and React/TS (available both as CLI and GUI), tested and released using GitHub Actions.
+        - Configuration and deployment of self-hosted GitHub runners based on Windows and Linux Docker containers.
+        - Custom GitHub Actions written in Powershell, Python, Bash, and TypeScript.
         - Custom SonarQube plugin written in Java.
-        - Tool for creating and maintaining development environments written in Python (available as both CLI and GUI).
+        - Python tool to create and maintain the development environments (available as both CLI and GUI).
 - title: Education
   type: entry
   entries:
@@ -44,7 +45,7 @@
         - Face position estimation and blurring for privacy purposes.
     - title: Expense Management - Hosted
       date: May 2021 - August 2021
-      description: WebApp React, Node, Nginx & MariaDB
+      description: WebApp - React, Node, Nginx & MariaDB
       link: https://github.com/FrancescoLuzzi/ReactClient
       infos:
         - Since it was for personal use, SSL/TLS or authentication was not configured.
@@ -60,7 +61,7 @@
         - A Python script was implemented for migration to the WebApp.
     - title: Cinemine - University Project
       date: April 2021 - July 2021
-      description: WebApp - HTML - CSS - Vanilla JS
+      description: WebApp - HTML, CSS, Vanilla JS
       link: https://github.com/FrancescoLuzzi/Cinemine
       infos:
         - Prototype website for managing, selling, and renting movies.
@@ -71,7 +72,7 @@
     - name: Programming
       values:
         - python!
-        - go
+        - go!
         - rust
         - javascript/typescript
         - lua
