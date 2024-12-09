@@ -2,57 +2,58 @@
 
 #show: resume.with(
   author: (
-    firstname: "{{.Firstname}}",
-    lastname: "{{.Lastname}}",
-    email: "{{.Email}}",
-    phone: "{{.Phone}}",
-    github: "{{.Github}}",
-    birth: "{{.Birth}}",
-    linkedin: "{{.Linkedin}}",
-    address: "{{.Address}}",
+    firstname: "{{ .Firstname }}",
+    lastname: "{{ .Lastname }}",
+    email: "{{ .Email }}",
+    phone: "{{ .Phone }}",
+    github: "{{ .Github }}",
+    birth: "{{ .Birth }}",
+    linkedin: "{{ .Linkedin }}",
+    address: "{{ .Address }}",
     positions: ({{ joinQuoted .Positions "," }}),
   ),
   font: ("Source Sans 3"),
-  language: "{{.Language}}",
+  language: "{{ .Language }}",
   colored-headers: true,
   show-footer: false,
 )
 
-{{define "entry"}}
-= {{.Title}}
+{{ define "entry" }}
+= {{ .Title }}
 
-{{range .Entries}}
-
+{{ range .Entries }}
 #resume-entry(
-  title: "{{.Title}}",
-  {{if .Location }}
-  location: "{{.Location}}",
-  {{end}}
-  date: "{{.Date}}",
-  description: "{{.Description}}",
-  {{if .Link }}
+  title: "{{ .Title }}",
+  {{ if .Location }}
+  location: "{{ .Location }}",
+  {{ end }}
+  date: "{{ .Date }}",
+  description: "{{ .Description }}",
+  {{ if .Link }}
   title-link: "{{.Link}}",
-  {{end}}
+  {{ end }}
 )
 
 #resume-item[
-  {{range .Infos}}
-  {{println "-" .}}
-  {{end}}
+  {{ range .Infos }}
+  {{ println "-" . }}
+  {{ end }}
 ]
-{{end}}
 
-{{end}}
+{{ end }}
+
+{{ end }}
 
 
-{{define "skill"}}
-= {{.Title}}
+{{ define "skill" }}
+= {{ .Title }}
 
-{{range .Skills}}
+{{ range .Skills }}
 #resume-skill-item(
-  "{{.Name}}",
-  ({{joinSkills .Values}}),
+  "{{ .Name }}",
+  ({{ joinSkills .Values }}),
 )
-{{end}}
+
+{{ end }}
 
 {{end}}
