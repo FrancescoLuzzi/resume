@@ -2,29 +2,32 @@
 - title: Esperienza
   type: entry
   entries:
-    - title: AlmaAutomotive
-      location: Bologna IT
-      date: Gennaio 2022 - Febbraio 2023
-      description: Embedded
-      link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
-      infos:
-        - Progetto Python per schede embedded custom.
-          Compilazione OS personalizzato basato su Yocto.
-          Interazione con diversi servizi cloud, frontend, microcontrollori e diverse periferiche esterne (sistemi di pagamento, nfc, modem, erogatori, ecc.).
-          Utilizzo di Gitlab per versioning e CI/CD.
-          Gestione custom del packaging ed aggiornamento OTA
-        - Progetto Python per il monitoring via CAN periferiche hardware, i dati venivano poi raccolti in un'istanza ThingsBoard self-hosted che si occupava della visualizzazione, dell'allerting e della configurazione remota e real-time delle schede.
     - title: CentroSoftware
       location: Bologna IT
       date: Febbraio 2023 - presente
-      description: DevOps/Tooling
+      description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
       infos:
-        - installer del prodotto e relativa pipeline CI/CD Jenkins
-        - tool per la gestione dei progetti e dei profili Delphi realizzato in Go e React/TS (sia in formato CLI che GUI), testato e rilasciato utilizzando le GitHub Actions
+        - Manutenzione dell'installer e updater del prodotto
+        - Manutenzione e sviluppo di pipeline CI/CD Jenkins
+        - Tool per la gestione dei profili Delphi realizzato in Go e React/TS (sia in formato CLI che GUI), testato e rilasciato utilizzando le GitHub Actions
         - configurazione e deployment di GitHub self-hosted runners Windows e Linux basati su Docker
-        - GitHub Action custom scritte i Powershell, Python, Bash e Typescript.
-        - plugin custom SonarQube scritto in Java
-        - tool Python per la creazione e manutenzione degli ambienti di sviluppo (sia in formato CLI che GUI)
+        - GitHub Action custom scritte i Powershell, Python, Bash e Typescript per semplificare il ciclo di rilascio di tutti i progetti dell'azienda.
+        - Tool Python per la creazione e manutenzione degli ambienti di sviluppo di tutti gli sviluppatori (sia in formato CLI che GUI)
+        - La maggior parte dei progetti è stata sviluppata autonomamente e di propria iniziativa
+    - title: AlmaAutomotive
+      location: Bologna IT
+      date: Gennaio 2022 - Febbraio 2023
+      description: Embedded - Python - C - GitLab - Docker
+      link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
+      infos:
+        - Progetto Python per schede embedded custom, che esegue un SO custom basato su yocto.
+          Interazione con diversi servizi cloud e periferiche esterne (sistemi di pagamento, nfc, modem, erogatori, ecc.).
+          Utilizzo di Gitlab per versioning e CI/CD.
+          Questo progetto era manutenuto da 3 sviluppatori.
+        - Progetto Python per il monitoring via CAN di diverse periferiche hardware.
+          I dati venivano raccolti in un'istanza ThingsBoard che si occupava della visualizzazione, dell'allerting e della configurazione remota e real-time delle schede.
+          L'applicazione è stata pensata per essere aggiornata via USB utilizzando delle regole custom udev
+          Il progetto python è stato pensato e sviluppato autonomamente.
 - title: Istruzione
   type: entry
   entries:
@@ -36,36 +39,34 @@
 - title: Progetti
   type: entry
   entries:
+    - title: Monkey-rs
+      date: Marzo 2025 - Aprile 2025
+      description: Interpreter - Rust
+      link: https://francescoluzzi.github.io/monkey-rs/
+      infos:
+        - Implementazione di un interprete per una variazione del linguaggion di programmazione monkey in rust
+        - Distribuzione dell'interprete in WASM per poter essere utilizzato nel browser
+    - title: battery_limiter
+      date: Ottobre 2024 - Novembre 2024
+      description: System Tool - Rust
+      link: https://github.com/FrancescoLuzzi/battery_limiter
+      infos:
+        - Tool GUI per gestire il livello massimo di carica della batteria del portatile in Ubuntu
+        - Si integra con systemd per applicare il livello massimo di carica automaticamente
     - title: Tesi Triennale
       date: Ottobre 2021 - Dicembre 2021
-      description: Computer Vision - Python
+      description: Computer Vision - Python - OpenCv
       link: https://github.com/FrancescoLuzzi/Tesi
       infos:
         - Rilevazione delle pose delle persone utilizzando la rete OpenPose
         - Stima della posizione ed oscuramento dei volti per privacy
     - title: Gestione Spese - Hosted
       date: Maggio 2021 - Agosto 2021
-      description: WebApp - React, Node, Nginx & MariaDB
+      description: WebApp - React - Node - Nginx - MariaDB
       link: https://github.com/FrancescoLuzzi/ReactClient
       infos:
-        - Essendo per uso personale non sono stati configurati SSL/TLS o auth,
-          l'app non è esposta pubblicamente ma è accessibile tramite una VPN wireguard
+        - L'app non è esposta pubblicamente ma è accessibile tramite una VPN privata wireguard
         - Cronjob per il backup del database su NAS montato come NFS
-        - Tutto lo stack è stato installato su un raspberry 3b+
-    - title: Gestione Spese - Desktop
-      date: Maggio 2018 - Luglio 2018
-      description: Desktop App - Java
-      link: https://github.com/FrancescoLuzzi/scontrini_desktop
-      infos:
-        - App Desktop scritta in Java11 e JavaFX11 per la gestione delle spese
-        - Implementato uno script python per la migrazione alla WebApp
-    - title: Cinemine - Progetto Universitario
-      date: Aprile 2021 - Luglio 2021
-      description: WebApp - Html, CSS, Valinna JS
-      link: https://github.com/FrancescoLuzzi/Cinemine
-      infos:
-        - Prototipo di un sito web per la gestione, vendita e noleggio di film
-        - Server e DB simulati con `localStorage`
 - title: Skills
   type: skill
   skills:

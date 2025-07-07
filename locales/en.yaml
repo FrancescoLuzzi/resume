@@ -2,29 +2,32 @@
 - title: Experience
   type: entry
   entries:
-    - title: AlmaAutomotive
-      location: Bologna IT
-      date: January 2022 - February 2023
-      description: Embedded
-      link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
-      infos:
-        - Python project developed for custom embedded boards.
-          Custom OS compiled using Yocto.
-          Interaction with various cloud services, frontend, microcontrollers and several external peripherals (payment systems, NFC, modems, dispensers, etc.).
-          Gitlab for versioning and CI/CD.
-          Custom project packaging and OTA updates.
-        - Python project for CAN-based monitoring of various peripherals. The data was then collected in a self-hosted ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
     - title: CentroSoftware
       location: Bologna IT
       date: February 2023 - Present
-      description: DevOps/Tooling
+      description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
       infos:
-        - Installer of the product and relative Jenkins CI/CD pipeline.
-        - Project and Delphi's profiles management tool developed in Go and React/TS (available both as CLI and GUI), tested and released using GitHub Actions.
+        - Maintain the product's installer and updater.
+        - Maintain and develop Jenkins CI/CD pipelines.
+        - Delphi's profiles management tool developed in Go and React/TS (available both as CLI and GUI), tested and released using GitHub Actions.
         - Configuration and deployment of self-hosted GitHub runners based on Windows and Linux Docker containers.
-        - Custom GitHub Actions written in Powershell, Python, Bash, and TypeScript.
-        - Custom SonarQube plugin written in Java.
-        - Python tool to create and maintain the development environments (available as both CLI and GUI).
+        - Custom GitHub Actions written in Powershell, Python, Bash, and TypeScript to streamline the release cycle of all the company's projects.
+        - Python tool to create and maintain the development environments of all of the developers (available as both CLI and GUI).
+        - Most of the projects were developed autonomously and on my own initiative.
+    - title: AlmaAutomotive
+      location: Bologna IT
+      date: January 2022 - February 2023
+      description: Embedded - Python - C - GitLab - Docker
+      link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
+      infos:
+        - Python project developed for custom embedded boards, running a custom SO built using Yocto.
+          Interaction with various cloud services and external peripherals (payment systems, NFC, modems, dispensers, etc...).
+          Gitlab for versioning and CI/CD.
+          This project was mainained by 3 developers.
+        - Python project for CAN-based daemon responsible monitoring of various peripherals.
+          The data was then collected in a ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
+          The application cound be updated via USB, without an internet connection, using custom udev rules.
+          The python project was designed and developed autonomously.
 - title: Education
   type: entry
   entries:
@@ -36,6 +39,20 @@
 - title: Projects
   type: entry
   entries:
+    - title: Monkey-rs
+      date: March 2025 - April 2025
+      description: Interpreter - Rust
+      link: https://francescoluzzi.github.io/monkey-rs/
+      infos:
+        - Implementation of an interpreter of a variation of the monkey language in rust
+        - Deployment of the interpreter in WASM to be used on the browser
+    - title: battery_limiter
+      date: October 2024 - November 2024
+      description: System Tool - Rust
+      link: https://github.com/FrancescoLuzzi/battery_limiter
+      infos:
+        - GUI tool to manage Ubuntu's max battery threshold on my pc.
+        - It integrates with systemd to apply the battery threshold automatically.
     - title: Bachelor's Thesis
       date: October 2021 - December 2021
       description: Computer Vision - Python
@@ -45,27 +62,11 @@
         - Face position estimation and blurring for privacy purposes.
     - title: Expense Management - Hosted
       date: May 2021 - August 2021
-      description: WebApp - React, Node, Nginx & MariaDB
+      description: WebApp - React - Node - Nginx - MariaDB
       link: https://github.com/FrancescoLuzzi/ReactClient
       infos:
-        - Since it was for personal use, SSL/TLS or authentication was not configured.
-          The app is not publicly exposed but accessible via a WireGuard VPN.
+        - The app is not publicly exposed but accessible via a private WireGuard VPN.
         - Cronjob for database backup to a NAS mounted as NFS.
-        - The entire stack was installed on a Raspberry Pi 3B+.
-    - title: Expense Management - Desktop
-      date: May 2018 - July 2018
-      description: Desktop App - Java
-      link: https://github.com/FrancescoLuzzi/scontrini_desktop
-      infos:
-        - Desktop app written in Java11 and JavaFX11 for expense management.
-        - A Python script was implemented for migration to the WebApp.
-    - title: Cinemine - University Project
-      date: April 2021 - July 2021
-      description: WebApp - HTML, CSS, Vanilla JS
-      link: https://github.com/FrancescoLuzzi/Cinemine
-      infos:
-        - Prototype website for managing, selling, and renting movies.
-        - Server and database simulated using `localStorage`.
 - title: Skills
   type: skill
   skills:
