@@ -1,1 +1,1 @@
-#import "@preview/modern-cv:0.7.0": *
+#import "@preview/modern-cv:0.8.0": *
