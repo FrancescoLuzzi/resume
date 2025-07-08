@@ -46,6 +46,13 @@
       infos:
         - Implementation of an interpreter of a variation of the monkey language in rust
         - Deployment of the interpreter in WASM to be used on the browser
+    - title: GoWebTemplate
+      date: December 2024 - January 2025
+      description: WebApp - Go - Htmx - AplineJs - Postgres
+      link: https://github.com/FrancescoLuzzi/GoWebTemplate
+      infos:
+        - Go template for a web app based on go stdlib and the Templ library
+        - It implements a simple JWT auth flow and in-memory page caching
     - title: battery_limiter
       date: October 2024 - November 2024
       description: System Tool - Rust
@@ -60,13 +67,6 @@
       infos:
         - Detection of human poses using the OpenPose network.
         - Face position estimation and blurring for privacy purposes.
-    - title: Expense Management - Hosted
-      date: May 2021 - August 2021
-      description: WebApp - React - Node - Nginx - MariaDB
-      link: https://github.com/FrancescoLuzzi/ReactClient
-      infos:
-        - The app is not publicly exposed but accessible via a private WireGuard VPN.
-        - Cronjob for database backup to a NAS mounted as NFS.
 - title: Skills
   type: skill
   skills:

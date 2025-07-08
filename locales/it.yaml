@@ -46,6 +46,13 @@
       infos:
         - Implementazione di un interprete per una variazione del linguaggion di programmazione monkey in rust
         - Distribuzione dell'interprete in WASM per poter essere utilizzato nel browser
+    - title: GoWebTemplate
+      date: Dicembre 2024 - Gennaio 2025
+      description: WebApp - Go - Htmx - AplineJs - Postgres
+      link: https://github.com/FrancescoLuzzi/GoWebTemplate
+      infos:
+        - Template Go per la creazione di web app basate sulla stdlib di go e la libreria Templ
+        - Implementa un semplice flow di autenticazione JWT e caching in-memory delle pagine generate
     - title: battery_limiter
       date: Ottobre 2024 - Novembre 2024
       description: System Tool - Rust
@@ -60,13 +67,6 @@
       infos:
         - Rilevazione delle pose delle persone utilizzando la rete OpenPose
         - Stima della posizione ed oscuramento dei volti per privacy
-    - title: Gestione Spese - Hosted
-      date: Maggio 2021 - Agosto 2021
-      description: WebApp - React - Node - Nginx - MariaDB
-      link: https://github.com/FrancescoLuzzi/ReactClient
-      infos:
-        - L'app non è esposta pubblicamente ma è accessibile tramite una VPN privata wireguard
-        - Cronjob per il backup del database su NAS montato come NFS
 - title: Skills
   type: skill
   skills:
