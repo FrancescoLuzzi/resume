@@ -3,38 +3,34 @@
   type: entry
   entries:
     - title: CentroSoftware
-      location: Bologna IT
+      location: Bologna, IT
       date: February 2023 - Present
       description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
       infos:
-        - Maintain the product's installer and updater.
-        - Maintain and develop Jenkins CI/CD pipelines.
-        - Delphi's profiles management tool developed in Go and React/TS (available both as CLI and GUI), tested and released using GitHub Actions.
-        - Configuration and deployment of self-hosted GitHub runners based on Windows and Linux Docker containers.
-        - Custom GitHub Actions written in Powershell, Python, Bash, and TypeScript to streamline the release cycle of all the company's projects.
-        - Python tool to create and maintain the development environments of all of the developers (available as both CLI and GUI).
-        - Most of the projects were developed autonomously and on my own initiative.
+        - Maintenance and development of the product's installer/updater, CI/CD pipelines in Jenkins and GitHub Actions.
+        - GitHub Actions developed in Powershell, Python, Bash, and Typescript to streamline the release cycle, testing, and code analysis of projects.
+        - Deployment of Windows and Linux "GitHub self-hosted runners" using Docker and Docker Compose.
+        - Tool for managing Delphi profiles developed in Go and React, designed to simplify the configuration of multiple development environments.
+        - Python tool for creating and maintaining development and release environments.
     - title: AlmaAutomotive
-      location: Bologna IT
+      location: Bologna, IT
       date: January 2022 - February 2023
       description: Embedded - Python - C - GitLab - Docker
       link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
       infos:
-        - Python project developed for custom embedded boards, running a custom SO built using Yocto.
-          Interaction with various cloud services and external peripherals (payment systems, NFC, modems, dispensers, etc...).
-          Gitlab for versioning and CI/CD.
-          This project was mainained by 3 developers.
-        - Python project for CAN-based daemon responsible monitoring of various peripherals.
-          The data was then collected in a ThingsBoard instance for data visualization, alerting, and real-time remote board configuration.
-          The application cound be updated via USB, without an internet connection, using custom udev rules.
-          The python project was designed and developed autonomously.
+        - Python project for custom embedded boards running a custom Yocto-based OS.
+          Interaction with various cloud services and external peripherals (payment systems, NFC, modem, dispensers, etc.).
+          Used GitLab for versioning and CI/CD.
+        - Python project for CAN-based monitoring of multiple hardware peripherals.
+          Data was collected in a ThingsBoard instance which handled visualization, alerting, and remote real-time configuration of the boards.
+          Updates were handled via USB through custom udev rules.
 - title: Education
   type: entry
   entries:
     - title: Bachelor's Degree
       date: September 2018 - December 2021
-      location: Bologna IT
-      description: Bachelor's degree in Computer Engineering, graduated with a grade of 100/110.
+      location: Bologna, IT
+      description: Bachelor's degree in Computer Engineering, final grade 100/110
       link: https://corsi.unibo.it/laurea/IngegneriaInformatica
 - title: Projects
   type: entry
@@ -44,8 +40,8 @@
       description: Interpreter - Rust
       link: https://francescoluzzi.github.io/monkey-rs/
       infos:
-        - Implementation of an interpreter of a variation of the monkey language in rust
-        - Deployment of the interpreter in WASM to be used on the browser
+        - Interpreter, with some modifications, of the Monkey programming language developed with no dependencies
+        - The interpreter can be compiled to WASM to be used in the browser
     - title: GoWebTemplate
       date: December 2024 - January 2025
       description: WebApp - Go - Htmx - AplineJs - Postgres
@@ -58,11 +54,11 @@
       description: System Tool - Rust
       link: https://github.com/FrancescoLuzzi/battery_limiter
       infos:
-        - GUI tool to manage Ubuntu's max battery threshold on my pc.
-        - It integrates with systemd to apply the battery threshold automatically.
-    - title: Bachelor's Thesis
+        - GUI tool to manage the maximum charge level of a laptop battery
+        - Integrates with systemd to automatically apply the maximum charge level
+    - title: Bachelor’s Thesis
       date: October 2021 - December 2021
-      description: Computer Vision - Python
+      description: Computer Vision - Python - OpenCV
       link: https://github.com/FrancescoLuzzi/Tesi
       infos:
         - Detection of human poses using the OpenPose network.

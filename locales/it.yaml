@@ -7,13 +7,11 @@
       date: Febbraio 2023 - presente
       description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
       infos:
-        - Manutenzione dell'installer e updater del prodotto
-        - Manutenzione e sviluppo di pipeline CI/CD Jenkins
-        - Tool per la gestione dei profili Delphi realizzato in Go e React/TS (sia in formato CLI che GUI), testato e rilasciato utilizzando le GitHub Actions
-        - configurazione e deployment di GitHub self-hosted runners Windows e Linux basati su Docker
-        - GitHub Action custom scritte i Powershell, Python, Bash e Typescript per semplificare il ciclo di rilascio di tutti i progetti dell'azienda.
-        - Tool Python per la creazione e manutenzione degli ambienti di sviluppo di tutti gli sviluppatori (sia in formato CLI che GUI)
-        - La maggior parte dei progetti è stata sviluppata autonomamente e di propria iniziativa
+        - Manutenzione e sviluppo installer/updater del prodotto, di pipeline CI/CD Jenkins e Github Actions.
+        - GitHub Action sviluppate i Powershell, Python, Bash e Typescript per semplificare il ciclo di rilascio, test ed analisi del codice dei progetti .
+        - Deployment di "GitHub self-hosted runners" Windows e Linux utilizzando Docker e Docker Compose.
+        - Tool per la gestione dei profili Delphi realizzato in Go e React, pensato per semplificare la configurazione di multipli ambienti di sviluppo.
+        - Tool Python per la creazione e manutenzione degli ambienti di sviluppo e di rilascio.
     - title: AlmaAutomotive
       location: Bologna IT
       date: Gennaio 2022 - Febbraio 2023
@@ -23,11 +21,9 @@
         - Progetto Python per schede embedded custom, che esegue un SO custom basato su yocto.
           Interazione con diversi servizi cloud e periferiche esterne (sistemi di pagamento, nfc, modem, erogatori, ecc.).
           Utilizzo di Gitlab per versioning e CI/CD.
-          Questo progetto era manutenuto da 3 sviluppatori.
         - Progetto Python per il monitoring via CAN di diverse periferiche hardware.
           I dati venivano raccolti in un'istanza ThingsBoard che si occupava della visualizzazione, dell'allerting e della configurazione remota e real-time delle schede.
-          L'applicazione è stata pensata per essere aggiornata via USB utilizzando delle regole custom udev
-          Il progetto python è stato pensato e sviluppato autonomamente.
+          L'aggiornamento avveniva via USB tramite delle regole custom udev
 - title: Istruzione
   type: entry
   entries:
@@ -44,7 +40,7 @@
       description: Interpreter - Rust
       link: https://francescoluzzi.github.io/monkey-rs/
       infos:
-        - Implementazione di un interprete per una variazione del linguaggion di programmazione monkey in rust
+        - Interprete, con alcune variazioni, del linguaggio di programmazione monkey sviluppato senza dipendenze
         - Distribuzione dell'interprete in WASM per poter essere utilizzato nel browser
     - title: GoWebTemplate
       date: Dicembre 2024 - Gennaio 2025
@@ -58,8 +54,8 @@
       description: System Tool - Rust
       link: https://github.com/FrancescoLuzzi/battery_limiter
       infos:
-        - Tool GUI per gestire il livello massimo di carica della batteria del portatile in Ubuntu
-        - Si integra con systemd per applicare il livello massimo di carica automaticamente
+        - Tool GUI per gestire il livello massimo di carica della batteria del portatile
+        - Si integra con systemd per applicare il livello massimo di carica in modo automatico
     - title: Tesi Triennale
       date: Ottobre 2021 - Dicembre 2021
       description: Computer Vision - Python - OpenCv
