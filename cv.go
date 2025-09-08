@@ -9,22 +9,53 @@ import (
 )
 
 const (
-	TypeEntry  string = "entry"
-	TypeSkill  string = "skill"
-	TypeAuthor string = "author"
+	TypeEntry   string = "entry"
+	TypeSkill   string = "skill"
+	TypeAuthor  string = "author"
+	TypeAboutMe string = "about-me"
 )
 
+type GenericField struct {
+	Type    string
+	Content any
+}
+
+type CV struct {
+	Author  AuthorField
+	AboutMe AboutMeField
+	Entries []EntryField
+	Skills  []SkillField
+}
+
+func (c *CV) AsGenericFields() []GenericField {
+	var result []GenericField
+	result = append(result, GenericField{TypeAuthor, c.Author})
+	result = append(result, GenericField{TypeAboutMe, c.AboutMe})
+	for _, entry := range c.Entries {
+		result = append(result, GenericField{TypeEntry, entry})
+	}
+	for _, skill := range c.Skills {
+		result = append(result, GenericField{TypeSkill, skill})
+	}
+	return result
+}
+
 type AuthorField struct {
-	Firstname string
-	Lastname  string
-	Email     string
-	Phone     string
-	Birth     string
 	Address   string
-	Language  string
+	Birth     string
+	Email     string
+	Firstname string
 	Github    string
+	Language  string
+	Lastname  string
+	Phone     string
 	Linkedin  string
 	Positions []string
+}
+
+type AboutMeField struct {
+	Title       string
+	Description string
 }
 
 type EntryField struct {
@@ -35,7 +66,7 @@ type EntryField struct {
 		Description string
 		Location    string
 		Link        string
-		Infos       []string
+		Infos       string
 	}
 }
 
@@ -47,77 +78,69 @@ type SkillField struct {
 	}
 }
 
-type GenericField struct {
-	Type    string
-	Content any
-}
-
 type Author struct {
-	Firstname, Lastname, Email, Github, Linkedin, Birth, Address, Language, Phone string
-	Positions                                                                     []string
+	Firstname string
+	Lastname  string
+	Email     string
+	Github    string
+	Linkedin  string
+	Birth     string
+	Address   string
+	Language  string
+	Phone     string
+	Positions []string
 }
 
-func LoadContent(path string) ([]GenericField, error) {
+func LoadCvYamlFile(path string) (CV, error) {
+	var result CV
 	fIn, err := os.Open(path)
 	if err != nil {
-		return nil, err
+		return result, err
 	}
 	defer fIn.Close()
 	fileContent, err := io.ReadAll(fIn)
 	if err != nil {
-		return nil, err
+		return result, err
 	}
 	var content []yaml.Node
 	if err = yaml.Unmarshal(fileContent, &content); err != nil {
-		return nil, err
+		return result, err
 	}
-	return unmarshalFields(&content)
-}
-
-func unmarshalField[T any](node *yaml.Node) (T, error) {
-	var entry T
-	err := node.Decode(&entry)
-	return entry, err
-}
-
-func unmarshalEntry(entryType string, node yaml.Node) (GenericField, error) {
-	var result GenericField
-	var err error
-	result.Type = entryType
-	switch entryType {
-	case TypeEntry:
-		result.Content, err = unmarshalField[EntryField](&node)
-		break
-	case TypeSkill:
-		result.Content, err = unmarshalField[SkillField](&node)
-		break
-	case TypeAuthor:
-		result.Content, err = unmarshalField[AuthorField](&node)
-		break
-	default:
-		err = fmt.Errorf("Unkown type: %s", entryType)
-	}
+	err = unmarshalCv(&content, &result)
 	return result, err
 }
 
-func unmarshalFields(root *[]yaml.Node) ([]GenericField, error) {
+func unmarshalCv(root *[]yaml.Node, cv *CV) error {
 	// this is not a general implementation, just solving my problem
-	var out []GenericField
+	var err error
 	var commonInfo struct {
 		Type string
 	}
 	for _, sectionNode := range *root {
 		sectionNode.Decode(&commonInfo)
-		field, err := unmarshalEntry(commonInfo.Type, sectionNode)
-		if err != nil {
-			return nil, err
+		switch commonInfo.Type {
+		case TypeEntry:
+			var entry EntryField
+			err = sectionNode.Decode(&entry)
+			cv.Entries = append(cv.Entries, entry)
+			break
+		case TypeSkill:
+			var skill SkillField
+			err = sectionNode.Decode(&skill)
+			cv.Skills = append(cv.Skills, skill)
+			break
+		case TypeAuthor:
+			err = sectionNode.Decode(&cv.Author)
+			break
+		case TypeAboutMe:
+			err = sectionNode.Decode(&cv.AboutMe)
+			break
+		default:
+			err = fmt.Errorf("Unkown type: %s", commonInfo.Type)
 		}
-		if field.Type == TypeAuthor {
-			// prepend so that the author entry is always at the top
-			out = append([]GenericField{field}, out...)
-		} else {
-			out = append(out, field)
+		if err != nil {
+			return err
 		}
 	}
-	return out, nil
+	return nil
 }

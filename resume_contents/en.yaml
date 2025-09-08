@@ -12,70 +12,91 @@
     - developer
     - devops
   language: it
+- type: about-me
+  description: |-
+    I'm a passionate developer who supports open source and transparent company culture.\
+    I have experience building both fullstack applications and tooling, with a strong focus on correctness, performance, and ease of use.\
+    My objective is to expand my knowledge of online services that need to handle many users with good availability and responsiveness.\
+    I love digging into everything I use, making sure I understand it and can explain it, so I can also help others.\
+    One of my favorite quotes is: "What I cannot create, I do not understand" (Richard Feynman).
 - type: entry
   title: Experience
   entries:
-    - title: CentroSoftware
-      location: Bologna, IT
+    - title: DevOps Engineer
+      location: CentroSoftware Bologna, IT
       date: February 2023 - Present
-      description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
-      infos:
-        - Maintenance and development of the product's installer/updater, CI/CD pipelines in Jenkins and GitHub Actions.
-        - GitHub Actions developed in Powershell, Python, Bash, and Typescript to streamline the release cycle, testing, and code analysis of projects.
-        - Deployment of Windows and Linux "GitHub self-hosted runners" using Docker and Docker Compose.
-        - Tool for managing Delphi profiles developed in Go and React, designed to simplify the configuration of multiple development environments.
-        - Python tool for creating and maintaining development and release environments.
-    - title: AlmaAutomotive
-      location: Bologna, IT
+      description: Python - Go - TS - Powershell - Bash - Docker - Github
+      link: https://github.com/centrosoftware-actions
+      infos: |
+        - Handled the maintenance and development of the legacy product's installer and updater
+        - Developed various GitHub Actions in Powershell, Python, Bash, and Typescript to help streamline\
+          testing, releasing, and code analysis in different company projects. Some of these actions are open source.
+        - Configured the infrastructure on which many of the company's code automations run,\
+          based on heavily customized Docker images and GitHub Actions runners.\
+          By aligning my decisions with the company’s context, I was able to keep maintenance costs very low\
+          and share know-how with other teams, enabling them to work independently.
+        - Built a tool to manage the development profiles of the Delphi IDE.\
+          Developed in Go and React, designed to simplify the management of multiple development profiles and enable sharing them.
+        - Refactored a Python tool used to create and maintain different development environments.\
+          Applied both TDD and snapshot testing, since the inputs and outputs of the tool were well known.\
+          It is used by all the company's developers, saving time by automating the correct setup of the required development dependencies.
+    - title: Software Engineer
+      location: AlmaAutomotive Bologna, IT
       date: January 2022 - February 2023
       description: Embedded - Python - C - GitLab - Docker
       link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
-      infos:
-        - Python project for custom embedded boards running a custom Yocto-based OS.
-          Interaction with various cloud services and external peripherals (payment systems, NFC, modem, dispensers, etc.).
-          Used GitLab for versioning and CI/CD.
-        - Python project for CAN-based monitoring of multiple hardware peripherals.
-          Data was collected in a ThingsBoard instance which handled visualization, alerting, and remote real-time configuration of the boards.
-          Updates were handled via USB through custom udev rules.
-- title: Education
-  type: entry
-  entries:
-    - title: Bachelor's Degree
-      date: September 2018 - December 2021
-      location: Bologna, IT
-      description: Bachelor's degree in Computer Engineering, final grade 100/110
-      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
+      infos: |
+        - The main project I worked on was a smart soft drink dispenser.\
+          It's a Python and C project built for custom embedded boards running a Linux distro built using Yocto.\
+          My biggest contribution to the project was the complete refactoring of the payment library based on the MDB protocol,\
+          which greatly improved the reliability and stability of communication with POS devices.\
+          The smart part of the project is the integration with different clouds, used to configure and log machine metrics.\
+          The project also has to interface with and manage many other external peripherals, such as NFC receivers, 3G modems, various types of dispensers and microcontrollers.\
+          GitLab was used as the version control system and CI/CD platform.
+        - The second project I worked on was a CAN-based battery monitoring system written in python.\
+          It integrates with ThingsBoard for data visualization, alerting, and real-time remote board configuration.\
+          Updates were handled via USB through custom udev rules and bash scripts.
 - type: entry
   title: Projects
   entries:
-    - title: Monkey-rs
+    - title: monkey-rs
       date: March 2025 - April 2025
       description: Interpreter - Rust
       link: https://francescoluzzi.github.io/monkey-rs/
-      infos:
-        - Interpreter, with some modifications, of the Monkey programming language developed with no dependencies
-        - The interpreter can be compiled to WASM to be used in the browser
+      infos: |
+        - I've always wondered how an interpreter worked, so I implemented one
+        - My implementation of the `monkey` language is based on the book "Writing an Interpreter in Go" with some personal touches
+        - The interpreter can be compiled to WASM and used in the browser
+        - You can click the title of this entry to open the online demo
     - title: GoWebTemplate
       date: December 2024 - January 2025
-      description: WebApp - Go - Htmx - AplineJs - Postgres
+      description: WebApp - Go - Htmx - AlpineJs - Postgres
       link: https://github.com/FrancescoLuzzi/GoWebTemplate
-      infos:
-        - Go template for a web app based on go stdlib and the Templ library
-        - It implements a simple JWT auth flow and in-memory page caching
+      infos: |
+        - Template project of a web app using Go's stdlib and the Templ library
+        - Implements simple JWT authentication and both in-memory and Redis caching
     - title: battery_limiter
       date: October 2024 - November 2024
       description: System Tool - Rust
       link: https://github.com/FrancescoLuzzi/battery_limiter
-      infos:
-        - GUI tool to manage the maximum charge level of a laptop battery
-        - Integrates with systemd to automatically apply the maximum charge level
-    - title: Bachelor’s Thesis
+      infos: |
+        - Since Ubuntu doesn't have a native application to set the battery charge threshold, I built one.
+        - Integrates with systemd by creating a service that automatically applies the selected charge level.
+    - title: Face obscuration in video sequences using deep learning
       date: October 2021 - December 2021
-      description: Computer Vision - Python - OpenCV
+      description: Bachelor's Thesis
       link: https://github.com/FrancescoLuzzi/Tesi
-      infos:
-        - Detection of human poses using the OpenPose network.
-        - Face position estimation and blurring for privacy purposes.
+      infos: |
+        - Detection of human poses using Python, OpenCV, and OpenPose
+        - Estimation of face positions with the objective of blurring them for privacy purposes
+- type: entry
+  title: Education
+  entries:
+    - title: Bachelor's Degree
+      date: September 2018 - December 2021
+      location: Alma Mater Studiorum UniBo
+      description: Bachelor's degree in Computer Engineering, final grade 100/110
+      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
 - type: skill
   title: Skills
   skills:
@@ -85,6 +106,7 @@
         - go!
         - rust
         - javascript/typescript
+        - c#
         - lua
         - c
         - java

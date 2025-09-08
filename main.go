@@ -10,7 +10,11 @@ import (
 	"text/template"
 )
 
-func JoinQuoted(elems []string, sep string) string {
+func replace(input, from, to string) string {
+	return strings.ReplaceAll(input, from, to)
+}
+
+func joinQuoted(elems []string, sep string) string {
 	var b strings.Builder
 	b.WriteByte('"')
 	b.WriteString(elems[0])
@@ -37,7 +41,7 @@ func formatSkill(skill string) string {
 	}
 }
 
-func JoinSkills(skills []string) string {
+func joinSkills(skills []string) string {
 	var b strings.Builder
 	b.WriteString(formatSkill(skills[0]))
 	for _, s := range skills[1:] {
@@ -47,7 +51,11 @@ func JoinSkills(skills []string) string {
 	return b.String()
 }
 
-var funcs = template.FuncMap{"joinQuoted": JoinQuoted, "joinSkills": JoinSkills}
+var funcs = template.FuncMap{
+	"joinQuoted": joinQuoted,
+	"joinSkills": joinSkills,
+	"replace":    replace,
+}
 
 func IfErrExit(err error) {
 	if err != nil {
@@ -74,9 +82,9 @@ func main() {
 	IfErrExit(err)
 	_, err = writer.Write(typstImports)
 	IfErrExit(err)
-	fields, err := LoadContent(*cv)
+	cv, err := LoadCvYamlFile(*cv)
 	IfErrExit(err)
-	for _, field := range fields {
+	for _, field := range cv.AsGenericFields() {
 		IfErrExit(cvTempl.ExecuteTemplate(writer, field.Type, field.Content))
 	}
 	writer.Flush()
