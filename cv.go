@@ -9,9 +9,23 @@ import (
 )
 
 const (
-	EntryType string = "entry"
-	SkillType string = "skill"
+	TypeEntry  string = "entry"
+	TypeSkill  string = "skill"
+	TypeAuthor string = "author"
 )
+
+type AuthorField struct {
+	Firstname string
+	Lastname  string
+	Email     string
+	Phone     string
+	Birth     string
+	Address   string
+	Language  string
+	Github    string
+	Linkedin  string
+	Positions []string
+}
 
 type EntryField struct {
 	Title   string
@@ -43,24 +57,7 @@ type Author struct {
 	Positions                                                                     []string
 }
 
-func LoadAuthor(path string) (*Author, error) {
-	fIn, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer fIn.Close()
-	fileContent, err := io.ReadAll(fIn)
-	if err != nil {
-		return nil, err
-	}
-	author := Author{}
-	if err = yaml.Unmarshal(fileContent, &author); err != nil {
-		return nil, err
-	}
-	return &author, nil
-}
-
-func LoadContent(path string) (*[]GenericField, error) {
+func LoadContent(path string) ([]GenericField, error) {
 	fIn, err := os.Open(path)
 	if err != nil {
 		return nil, err
@@ -77,46 +74,50 @@ func LoadContent(path string) (*[]GenericField, error) {
 	return unmarshalFields(&content)
 }
 
-func unmarshalEntries(node *yaml.Node, name string) (EntryField, error) {
-	var entries EntryField
-	err := node.Decode(&entries)
-	entries.Title = name
-	return entries, err
-}
-func unmarshalSkills(node *yaml.Node, name string) (SkillField, error) {
-	var skills SkillField
-	err := node.Decode(&skills)
-	skills.Title = name
-	return skills, err
+func unmarshalField[T any](node *yaml.Node) (T, error) {
+	var entry T
+	err := node.Decode(&entry)
+	return entry, err
 }
 
-func unmarshalFields(root *[]yaml.Node) (*[]GenericField, error) {
+func unmarshalEntry(entryType string, node yaml.Node) (GenericField, error) {
+	var result GenericField
+	var err error
+	result.Type = entryType
+	switch entryType {
+	case TypeEntry:
+		result.Content, err = unmarshalField[EntryField](&node)
+		break
+	case TypeSkill:
+		result.Content, err = unmarshalField[SkillField](&node)
+		break
+	case TypeAuthor:
+		result.Content, err = unmarshalField[AuthorField](&node)
+		break
+	default:
+		err = fmt.Errorf("Unkown type: %s", entryType)
+	}
+	return result, err
+}
+
+func unmarshalFields(root *[]yaml.Node) ([]GenericField, error) {
 	// this is not a general implementation, just solving my problem
 	var out []GenericField
 	var commonInfo struct {
-		Type  string
-		Title string
+		Type string
 	}
 	for _, sectionNode := range *root {
 		sectionNode.Decode(&commonInfo)
-		foundType := commonInfo.Type
-		switch foundType {
-		case EntryType:
-			entry, err := unmarshalEntries(&sectionNode, commonInfo.Title)
-			if err != nil {
-				return nil, err
-			}
-			out = append(out, GenericField{Type: commonInfo.Type, Content: entry})
-			break
-		case SkillType:
-			skill, err := unmarshalSkills(&sectionNode, commonInfo.Title)
-			if err != nil {
-				return nil, err
-			}
-			out = append(out, GenericField{Type: commonInfo.Type, Content: skill})
-		default:
-			panic(fmt.Sprintf("Unkown type: %s", commonInfo.Type))
+		field, err := unmarshalEntry(commonInfo.Type, sectionNode)
+		if err != nil {
+			return nil, err
+		}
+		if field.Type == TypeAuthor {
+			// prepend so that the author entry is always at the top
+			out = append([]GenericField{field}, out...)
+		} else {
+			out = append(out, field)
 		}
 	}
-	return &out, nil
+	return out, nil
 }

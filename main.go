@@ -56,9 +56,9 @@ func IfErrExit(err error) {
 }
 
 var (
-	author = flag.String("author", "locales/author.yaml", "Author yaml file")
-	cv     = flag.String("cv", "locales/it.yaml", "Cv yaml file")
-	out    = flag.String("out", "it.typ", "Output typst file")
+	cv      = flag.String("cv", "locales/it.yaml", "Cv yaml file")
+	out     = flag.String("out", "it.typ", "Output typst file")
+	imports = flag.String("imports", "requirements.typ", "Input typst file defining required dependencies")
 )
 
 func main() {
@@ -70,12 +70,13 @@ func main() {
 	templates := os.DirFS("templates")
 	cvTempl, err := template.New("cv.tmpl").Funcs(funcs).ParseFS(templates, "*.tmpl")
 	IfErrExit(err)
-	author, err := LoadAuthor(*author)
+	typstImports, err := os.ReadFile(*imports)
+	IfErrExit(err)
+	_, err = writer.Write(typstImports)
 	IfErrExit(err)
 	fields, err := LoadContent(*cv)
 	IfErrExit(err)
-	IfErrExit(cvTempl.Execute(writer, author))
-	for _, field := range *fields {
+	for _, field := range fields {
 		IfErrExit(cvTempl.ExecuteTemplate(writer, field.Type, field.Content))
 	}
 	writer.Flush()

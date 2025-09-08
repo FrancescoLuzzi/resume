@@ -31,7 +31,6 @@ jobs:
         shell: bash
         run: |
           just build
-          # compiles into "build" directory
           just generate
 
       - name: Create tag

@@ -1,6 +1,19 @@
 ---
-- title: Experience
-  type: entry
+- type: author
+  firstname: Francesco
+  lastname: Luzzi
+  email: francescoluzzi99@libero.it
+  phone: (+39) 338-486-5137
+  github: FrancescoLuzzi
+  birth: 03/08/1999
+  linkedin: FrancescoLuzzi
+  address: Cento IT
+  positions:
+    - developer
+    - devops
+  language: it
+- type: entry
+  title: Experience
   entries:
     - title: CentroSoftware
       location: Bologna, IT
@@ -32,8 +45,8 @@
       location: Bologna, IT
       description: Bachelor's degree in Computer Engineering, final grade 100/110
       link: https://corsi.unibo.it/laurea/IngegneriaInformatica
-- title: Projects
-  type: entry
+- type: entry
+  title: Projects
   entries:
     - title: Monkey-rs
       date: March 2025 - April 2025
@@ -63,8 +76,8 @@
       infos:
         - Detection of human poses using the OpenPose network.
         - Face position estimation and blurring for privacy purposes.
-- title: Skills
-  type: skill
+- type: skill
+  title: Skills
   skills:
     - name: Programming
       values:

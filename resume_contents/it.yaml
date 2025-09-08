@@ -1,6 +1,19 @@
 ---
-- title: Esperienza
-  type: entry
+- type: author
+  firstname: Francesco
+  lastname: Luzzi
+  email: francescoluzzi99@libero.it
+  phone: (+39) 338-486-5137
+  github: FrancescoLuzzi
+  birth: 03/08/1999
+  linkedin: FrancescoLuzzi
+  address: Cento IT
+  positions:
+    - developer
+    - devops
+  language: it
+- type: entry
+  title: Esperienza
   entries:
     - title: CentroSoftware
       location: Bologna IT
@@ -24,16 +37,16 @@
         - Progetto Python per il monitoring via CAN di diverse periferiche hardware.
           I dati venivano raccolti in un'istanza ThingsBoard che si occupava della visualizzazione, dell'allerting e della configurazione remota e real-time delle schede.
           L'aggiornamento avveniva via USB tramite delle regole custom udev
-- title: Istruzione
-  type: entry
+- type: entry
+  title: Istruzione
   entries:
     - title: Laurea Triennale
       date: Settembre 2018 - Dicembre 2021
       location: Bologna IT
       description: Laurea in ingegneria informatica conseguita con voto 100/110
       link: https://corsi.unibo.it/laurea/IngegneriaInformatica
-- title: Progetti
-  type: entry
+- type: entry
+  title: Progetti
   entries:
     - title: Monkey-rs
       date: Marzo 2025 - Aprile 2025
@@ -63,8 +76,8 @@
       infos:
         - Rilevazione delle pose delle persone utilizzando la rete OpenPose
         - Stima della posizione ed oscuramento dei volti per privacy
-- title: Skills
-  type: skill
+- type: skill
+  title: Skills
   skills:
     - name: Programmazione
       values:

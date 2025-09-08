@@ -1,5 +1,4 @@
-#import "@preview/modern-cv:0.7.0": *
-
+{{ define "author" }}
 #show: resume.with(
   author: (
     firstname: "{{ .Firstname }}",
@@ -16,7 +15,9 @@
   language: "{{ .Language }}",
   colored-headers: true,
   show-footer: false,
+  profile-picture: none,
 )
+{{ end }}
 
 {{ define "entry" }}
 = {{ .Title }}
@@ -41,7 +42,6 @@
 ]
 
 {{ end }}
-
 {{ end }}
 
 
@@ -55,5 +55,4 @@
 )
 
 {{ end }}
-
-{{end}}
+{{ end }}
