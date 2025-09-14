@@ -5,7 +5,9 @@ import (
 	"io"
 	"os"
 
-	"gopkg.in/yaml.v3"
+	"github.com/goccy/go-yaml"
+	"github.com/goccy/go-yaml/ast"
+	"github.com/goccy/go-yaml/parser"
 )
 
 const (
@@ -93,54 +95,76 @@ type Author struct {
 
 func LoadCvYamlFile(path string) (CV, error) {
 	var result CV
+
 	fIn, err := os.Open(path)
 	if err != nil {
 		return result, err
 	}
 	defer fIn.Close()
+
 	fileContent, err := io.ReadAll(fIn)
 	if err != nil {
 		return result, err
 	}
-	var content []yaml.Node
-	if err = yaml.Unmarshal(fileContent, &content); err != nil {
+
+	// parse to AST
+	f, err := parser.ParseBytes(fileContent, 0)
+	if err != nil {
 		return result, err
 	}
-	err = unmarshalCv(&content, &result)
-	return result, err
+
+	for _, doc := range f.Docs {
+		if doc == nil || doc.Body == nil {
+			continue
+		}
+		if seq, ok := doc.Body.(*ast.SequenceNode); ok {
+			err = unmarshalCvFromNodes(seq.Values, &result)
+		} else {
+			err = unmarshalCvFromNodes([]ast.Node{doc.Body}, &result)
+		}
+		return result, err
+	}
+
+	return result, fmt.Errorf("no document found in YAML")
 }
 
-func unmarshalCv(root *[]yaml.Node, cv *CV) error {
-	// this is not a general implementation, just solving my problem
+func unmarshalCvFromNodes(nodes []ast.Node, cv *CV) error {
 	var err error
 	var commonInfo struct {
-		Type string
+		Type string `yaml:"type"`
 	}
-	for _, sectionNode := range *root {
-		sectionNode.Decode(&commonInfo)
+	for _, node := range nodes {
+		if node == nil {
+			continue
+		}
+		err = yaml.NodeToValue(node, &commonInfo)
 		switch commonInfo.Type {
 		case TypeEntry:
 			var entry EntryField
-			err = sectionNode.Decode(&entry)
+			err = yaml.NodeToValue(node, &entry)
 			cv.Entries = append(cv.Entries, entry)
 			break
+
 		case TypeSkill:
 			var skill SkillField
-			err = sectionNode.Decode(&skill)
+			err = yaml.NodeToValue(node, &skill)
 			cv.Skills = append(cv.Skills, skill)
-			break
+
 		case TypeAuthor:
-			err = sectionNode.Decode(&cv.Author)
+			err = yaml.NodeToValue(node, &cv.Author)
 			break
+
 		case TypeAboutMe:
-			err = sectionNode.Decode(&cv.AboutMe)
+			err = yaml.NodeToValue(node, &cv.AboutMe)
 			break
+
 		default:
-			err = fmt.Errorf("Unkown type: %s", commonInfo.Type)
+			return fmt.Errorf("unknown type: %s", commonInfo.Type)
 		}
 		if err != nil {
 			return err
 		}
 	}
+
 	return nil
 }
