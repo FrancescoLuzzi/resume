@@ -12,72 +12,93 @@
     - developer
     - devops
   language: it
+- type: about-me
+  description: |-
+    Sono uno sviluppatore appassionato che sostiene l'open source e le culture aziendali trasparenti.\
+    Ho esperienza nello sviluppo sia di applicazioni fullstack che di strumenti, con una forte attenzione alla correttezza, prestazioni ed alla facilità d'uso.\
+    Il mio obiettivo è ampliare le mie conoscenze riguardante servizi online che devono gestire molti utenti garantendo buona disponibilità e reattività.\
+    Amo approfondire tutto ciò che utilizzo, assicurandomi di capirlo e saperlo spiegare, così da poter aiutare anche gli altri.\
+    Una delle mie citazioni preferite è: "What I cannot create, I do not understand" (Richard Feynman).
 - type: entry
   title: Esperienza
   entries:
-    - title: CentroSoftware
-      location: Bologna IT
-      date: Febbraio 2023 - presente
-      description: DevOps/Tooling - Python - Go - TS - Powershell - Bash - Docker - Github
-      infos:
-        - Manutenzione e sviluppo installer/updater del prodotto, di pipeline CI/CD Jenkins e Github Actions.
-        - GitHub Action sviluppate i Powershell, Python, Bash e Typescript per semplificare il ciclo di rilascio, test ed analisi del codice dei progetti .
-        - Deployment di "GitHub self-hosted runners" Windows e Linux utilizzando Docker e Docker Compose.
-        - Tool per la gestione dei profili Delphi realizzato in Go e React, pensato per semplificare la configurazione di multipli ambienti di sviluppo.
-        - Tool Python per la creazione e manutenzione degli ambienti di sviluppo e di rilascio.
-    - title: AlmaAutomotive
-      location: Bologna IT
+    - title: DevOps Engineer
+      location: CentroSoftware Bologna, IT
+      date: Febbraio 2023 - Presente
+      description: Python - Go - TS - Powershell - Bash - Docker - Github
+      link: https://github.com/centrosoftware-actions
+      infos: |
+        - Gestisco la manutenzione e lo sviluppo dell'installer e dell'updater legacy del prodotto
+        - Ho sviluppato diverse GitHub Actions in Powershell, Python, Bash e Typescript per semplificare\
+          testing, rilascio e analisi del codice in vari progetti aziendali. Alcune di queste actions sono open source.
+        - Ho configurato l'infrastruttura su cui eseguono molte automazioni aziendali,\
+          questa è basata su immagini Docker personalizzate e GitHub Actions runner.\
+          Allineando le mie decisioni al contesto aziendale, sono riuscito a mantenere i costi di manutenzione molto bassi\
+          ed a condividere il know-how con altri team, permettendo loro di lavorare in autonomia.
+        - Ho realizzato uno strumento per gestire i profili di sviluppo dell'IDE Delphi.\
+          Sviluppato in Go e React, progettato per semplificare la gestione e condivisione di più profili di sviluppo.
+        - Refactoring di uno strumento Python utilizzato per creare e mantenere diversi ambienti di sviluppo.\
+          Ho applicato sia TDD che snapshot testing, poiché gli input e gli output dello strumento erano ben noti.\
+          E' uno strumento utilizzato da tutti gli sviluppatori dell'azienda, fa risparmiare tempo automatizzando la corretta configurazione delle dipendenze di sviluppo.
+    - title: Software Engineer
+      location: AlmaAutomotive Bologna, IT
       date: Gennaio 2022 - Febbraio 2023
       description: Embedded - Python - C - GitLab - Docker
       link: https://www.cocacolaep.com/news-and-stories/new-compact-freestyle-drinks-dispenser-pilots-in-europe
-      infos:
-        - Progetto Python per schede embedded custom, che esegue un SO custom basato su yocto.
-          Interazione con diversi servizi cloud e periferiche esterne (sistemi di pagamento, nfc, modem, erogatori, ecc.).
-          Utilizzo di Gitlab per versioning e CI/CD.
-        - Progetto Python per il monitoring via CAN di diverse periferiche hardware.
-          I dati venivano raccolti in un'istanza ThingsBoard che si occupava della visualizzazione, dell'allerting e della configurazione remota e real-time delle schede.
-          L'aggiornamento avveniva via USB tramite delle regole custom udev
-- type: entry
-  title: Istruzione
-  entries:
-    - title: Laurea Triennale
-      date: Settembre 2018 - Dicembre 2021
-      location: Bologna IT
-      description: Laurea in ingegneria informatica conseguita con voto 100/110
-      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
+      infos: |
+        - Il progetto principale a cui ho lavorato è stato un distributore di bevande smart.\
+          È un progetto in Python e C sviluppato per schede embedded custom che eseguono una distribuzione Linux basata su Yocto.\
+          Il mio contributo più grande è stato il completo refactoring della libreria di pagamento basata sul protocollo MDB,\
+          questo ha migliorato notevolmente l'affidabilità e la stabilità della comunicazione con i dispositivi POS.\
+          La parte "smart" del progetto è l'integrazione con diversi cloud utilizzati per configurare e registrare le metriche delle macchine.\
+          Il progetto doveva inoltre interfacciarsi e gestire numerose periferiche esterne, come ricevitori NFC, modem 3G, vari tipi di dispenser e alcuni microcontrollori.\
+          E' stato utilizzato GitLab come sistema di versionamento e per CI/CD.
+        - Il secondo progetto a cui ho lavorato è stato un sistema di monitoraggio batterie basato su CAN scritto in Python.\
+          Il progetto si integra con ThingsBoard per la visualizzazione dei dati, gli avvisi e la configurazione remota in tempo reale delle schede.
+          Gli aggiornamenti venivano gestiti via USB tramite regole udev personalizzate e script bash.
 - type: entry
   title: Progetti
   entries:
-    - title: Monkey-rs
+    - title: monkey-rs
       date: Marzo 2025 - Aprile 2025
-      description: Interpreter - Rust
+      description: Interprete - Rust
       link: https://francescoluzzi.github.io/monkey-rs/
-      infos:
-        - Interprete, con alcune variazioni, del linguaggio di programmazione monkey sviluppato senza dipendenze
-        - Distribuzione dell'interprete in WASM per poter essere utilizzato nel browser
+      infos: |
+        - Mi sono sempre chiesto come funzionasse un interprete, così ho deciso di svilupparne uno
+        - La mia implementazione del linguaggio `monkey` si basa sul libro "Writing an Interpreter in Go" con alcuni adattamenti personali
+        - L'interprete può essere compilato in WASM ed eseguito nel browser
+        - Cliccando sul titolo di questa voce è possibile aprire la demo online
     - title: GoWebTemplate
       date: Dicembre 2024 - Gennaio 2025
-      description: WebApp - Go - Htmx - AplineJs - Postgres
+      description: WebApp - Go - Htmx - AlpineJs - Postgres
       link: https://github.com/FrancescoLuzzi/GoWebTemplate
-      infos:
-        - Template Go per la creazione di web app basate sulla stdlib di go e la libreria Templ
-        - Implementa un semplice flow di autenticazione JWT e caching in-memory delle pagine generate
+      infos: |
+        - Progetto template di una web app che utilizza la stdlib di Go e la libreria Templ
+        - Implementa una semplice autenticazione JWT e caching sia in-memory che su Redis
     - title: battery_limiter
       date: Ottobre 2024 - Novembre 2024
-      description: System Tool - Rust
+      description: Strumento di Sistema - Rust
       link: https://github.com/FrancescoLuzzi/battery_limiter
-      infos:
-        - Tool GUI per gestire il livello massimo di carica della batteria del portatile
-        - Si integra con systemd per applicare il livello massimo di carica in modo automatico
-    - title: Tesi Triennale
+      infos: |
+        - Poiché Ubuntu non dispone di un'applicazione nativa per impostare la soglia di carica della batteria, ne ho realizzata una.
+        - Si integra con systemd creando un servizio che applica automaticamente il livello di carica selezionato.
+    - title: Offuscamento dei volti in sequenze video tramite deep learning
       date: Ottobre 2021 - Dicembre 2021
-      description: Computer Vision - Python - OpenCv
+      description: Tesi di Laurea
       link: https://github.com/FrancescoLuzzi/Tesi
-      infos:
-        - Rilevazione delle pose delle persone utilizzando la rete OpenPose
-        - Stima della posizione ed oscuramento dei volti per privacy
+      infos: |
+        - Rilevamento delle pose umane con Python, OpenCV e OpenPose
+        - Stima la posizione dei volti con l'obiettivo di offuscarli a fini di privacy
+- type: entry
+  title: Formazione
+  entries:
+    - title: Laurea Triennale
+      date: Settembre 2018 - Dicembre 2021
+      location: Alma Mater Studiorum UniBo
+      description: Laurea in Ingegneria Informatica, voto finale 100/110
+      link: https://corsi.unibo.it/laurea/IngegneriaInformatica
 - type: skill
-  title: Skills
+  title: Competenze
   skills:
     - name: Programmazione
       values:
@@ -85,6 +106,7 @@
         - go!
         - rust
         - javascript/typescript
+        - c#
         - lua
         - c
         - java

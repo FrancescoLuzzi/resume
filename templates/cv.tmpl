@@ -19,6 +19,13 @@
 )
 {{ end }}
 
+{{ define "about-me"}}
+= About me
+
+{{ .Description }}
+
+{{ end }}
+
 {{ define "entry" }}
 = {{ .Title }}
 
@@ -36,9 +43,7 @@
 )
 
 #resume-item[
-  {{ range .Infos }}
-  {{ println "-" . }}
-  {{ end }}
+{{ .Infos }}
 ]
 
 {{ end }}
