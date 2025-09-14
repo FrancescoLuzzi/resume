@@ -17,6 +17,8 @@
     I'm a passionate developer who supports open source and transparent company culture.\
     I have experience building both fullstack applications and tooling, with a strong focus on correctness, performance, and ease of use.\
     My objective is to expand my knowledge of online services that need to handle many users with good availability and responsiveness.\
+    More than just solving problems, I focus on the long-term vision, ensuring that today's solutions are flexible for tomorrow's needs.\
+    I like constructive feedback, knowing that questioning my ideas can lead to better results.\
     I love digging into everything I use, making sure I understand it and can explain it, so I can also help others.\
     One of my favorite quotes is: "What I cannot create, I do not understand" (Richard Feynman).
 - type: entry
@@ -33,7 +35,7 @@
           testing, releasing, and code analysis in different company projects. Some of these actions are open source.
         - Configured the infrastructure on which many of the company's code automations run,\
           based on heavily customized Docker images and GitHub Actions runners.\
-          By aligning my decisions with the company’s context, I was able to keep maintenance costs very low\
+          By aligning my decisions with the company's context, I was able to keep maintenance costs very low\
           and share know-how with other teams, enabling them to work independently.
         - Built a tool to manage the development profiles of the Delphi IDE.\
           Developed in Go and React, designed to simplify the management of multiple development profiles and enable sharing them.
