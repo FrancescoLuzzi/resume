@@ -39,13 +39,14 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
-          tag=$(date +'%Y-%m-%d_%s')
-          git tag -a "$tag" -m "Update $tag"
-          git push --tags
+          tag=$(date +'%Y-%m-%d')
+          git tag -fa "$tag" -m "Update $tag"
+          git push --tags --force
           echo "tag=$tag" >> $GITHUB_OUTPUT
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
+          overwrite_files: true
           files: build/*
