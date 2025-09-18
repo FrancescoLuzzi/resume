@@ -14,13 +14,15 @@
   language: it
 - type: about-me
   description: |-
-    Sono uno sviluppatore appassionato che sostiene l'open source e una culture aziendale trasparente.\
-    Ho esperienza nello sviluppo sia di applicazioni fullstack e tooling, con una forte attenzione alla correttezza, alle prestazioni ed alla facilità d'uso.\
+    Sono appassionato dello sviluppo software, sono un sostenitore dell'open source e di una culture aziendale trasparente.\
+    Ho esperienza nello sviluppo di applicazioni fullstack e tooling, con una forte attenzione alla correttezza, alle prestazioni ed alla facilità d'uso.\
     Il mio obiettivo è ampliare le mie conoscenze riguardante servizi web che devono gestire molti utenti garantendo buona disponibilità e reattività.\
     Più che risolvere problemi, mi concentro sulla visione a lungo termine, garantendo che le soluzioni di oggi siano flessibili per le esigenze di domani.\
     Apprezzo il feedback costruttivo, sapendo che mettere in discussione le mie idee può portare a risultati migliori.\
-    Amo approfondire tutto ciò che utilizzo, assicurandomi di capirlo e saperlo spiegare, così da poter aiutare anche gli altri.\
-    Una delle mie citazioni preferite è: "What I cannot create, I do not understand" (Richard Feynman).
+    Mi piace approfondire tutto ciò che utilizzo, assicurandomi di capirlo e di saperlo spiegare, così da essere in grado di aiutare gli altri.\
+    Cat lover.\
+    Una delle mie citazioni preferite è:\
+    "What I cannot create, I do not understand" (Richard Feynman).
 - type: entry
   title: Esperienza
   entries:
