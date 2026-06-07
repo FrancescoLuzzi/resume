@@ -14,12 +14,12 @@
   language: it
 - type: about-me
   description: |-
-    I'm a passionate developer who supports open source and transparent company culture.\
-    I have experience building both fullstack applications and tooling, with a strong focus on correctness, performance, and ease of use.\
-    My objective is to expand my knowledge of online services that need to handle many users with good availability and responsiveness.\
-    More than just solving problems, I focus on the long-term vision, ensuring that today's solutions are flexible for tomorrow's needs.\
-    I like constructive feedback, knowing that questioning my ideas can lead to better results.\
-    I love digging into everything I use, making sure I understand it and can explain it, so I can also help others.\
+    I'm a developer who likes building useful software and understanding the tools behind it.\
+    I have experience with fullstack applications, tooling, automation, and embedded systems, with a focus on correctness, performance, and ease of use.\
+    Most of my work so far has been as a solo developer or in small teams of 2-3 people, so I'm used to starting projects, making the first technical decisions, and evolving them over time.\
+    I care about keeping solutions simple enough to maintain, while leaving room for future needs.\
+    I value constructive feedback and I don't mind changing my mind when a better idea comes up.\
+    I like digging into what I use, making sure I understand it well enough to explain it and help others.\
     Cat lover.\
     One of my favorite quotes is:\
     "What I cannot create, I do not understand" (Richard Feynman).
@@ -29,10 +29,13 @@
     - title: DevOps Engineer
       location: CentroSoftware Bologna, IT
       date: February 2023 - Present
-      description: Python - Go - TS - Powershell - Bash - Docker - Github
+      description: Python - Go - C# - .NET - WPF - TS - Powershell - Bash - Docker - Github
       link: https://github.com/centrosoftware-actions
       infos: |
         - Handled the maintenance and development of the legacy product's installer and updater
+        - Developed a C\# and .NET WPF tool to automate installation and maintenance of IIS applications.\
+          Worked independently on the application flows, focusing on clear interactions and robust behavior.\
+          Implemented a web.config migration system that saves hours for application support and partners.
         - Developed various GitHub Actions in Powershell, Python, Bash, and Typescript to help streamline\
           testing, releasing, and code analysis in different company projects. Some of these actions are open source.
         - Configured the infrastructure on which many of the company's code automations run,\

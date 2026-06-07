@@ -14,12 +14,12 @@
   language: it
 - type: about-me
   description: |-
-    Sono appassionato dello sviluppo software, sono un sostenitore dell'open source e di una culture aziendale trasparente.\
-    Ho esperienza nello sviluppo di applicazioni fullstack e tooling, con una forte attenzione alla correttezza, alle prestazioni ed alla facilità d'uso.\
-    Il mio obiettivo è ampliare le mie conoscenze riguardante servizi web che devono gestire molti utenti garantendo buona disponibilità e reattività.\
-    Più che risolvere problemi, mi concentro sulla visione a lungo termine, garantendo che le soluzioni di oggi siano flessibili per le esigenze di domani.\
-    Apprezzo il feedback costruttivo, sapendo che mettere in discussione le mie idee può portare a risultati migliori.\
-    Mi piace approfondire tutto ciò che utilizzo, assicurandomi di capirlo e di saperlo spiegare, così da essere in grado di aiutare gli altri.\
+    Sono uno sviluppatore a cui piace creare software utile e capire bene gli strumenti che usa.\
+    Ho esperienza nello sviluppo di applicazioni fullstack, tooling, automazioni e sistemi embedded, con attenzione a correttezza, prestazioni e facilità d'uso.\
+    Finora ho lavorato soprattutto da solo o in team piccoli di 2-3 persone, quindi sono abituato ad avviare progetti, prendere le prime decisioni tecniche e farli evolvere nel tempo.\
+    Mi interessa mantenere le soluzioni semplici da gestire, senza chiudere la porta alle esigenze future.\
+    Apprezzo il feedback costruttivo e non ho problemi a cambiare idea quando emerge una soluzione migliore.\
+    Mi piace approfondire ciò che utilizzo, fino a capirlo abbastanza bene da poterlo spiegare e aiutare gli altri.\
     Cat lover.\
     Una delle mie citazioni preferite è:\
     "What I cannot create, I do not understand" (Richard Feynman).
@@ -29,10 +29,13 @@
     - title: DevOps Engineer
       location: CentroSoftware Bologna, IT
       date: Febbraio 2023 - Presente
-      description: Python - Go - TS - Powershell - Bash - Docker - Github
+      description: Python - Go - C# - .NET - WPF - TS - Powershell - Bash - Docker - Github
       link: https://github.com/centrosoftware-actions
       infos: |
         - Gestisco la manutenzione e lo sviluppo dell'installer e dell'updater legacy del prodotto
+        - Ho sviluppato uno strumento C\# e .NET WPF per automatizzare installazione e manutenzione di applicazioni IIS.\
+          Ho lavorato in autonomia sui flussi dell'applicazione, puntando a interazioni chiare e comportamenti robusti.\
+          Ho implementato un sistema di migrazione dei web.config che fa risparmiare ore al supporto applicativo e ai partner.
         - Ho sviluppato diverse GitHub Actions in Powershell, Python, Bash e Typescript per semplificare\
           testing, rilascio e analisi del codice in vari progetti aziendali. Alcune di queste actions sono open source.
         - Ho configurato l'infrastruttura su cui eseguono molte automazioni aziendali,\
@@ -108,9 +111,9 @@
       values:
         - python!
         - go!
+        - c#
         - rust
         - javascript/typescript
-        - c#
         - lua
         - c
         - java
